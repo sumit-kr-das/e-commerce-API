@@ -3,5 +3,6 @@ dotenv.config();
 
 export const { 
     PORT_NO,
-    DB_CONNECT
+    DB_CONNECT,
+    PASS_SEC
 } = process.env;
