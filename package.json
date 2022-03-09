@@ -1,0 +1,24 @@
+{
+  "name": "e-commerce-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon -r esm server.js"
+  },
+  "keywords": [
+    "e-com",
+    "api"
+  ],
+  "author": "sumit-kr-das",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
