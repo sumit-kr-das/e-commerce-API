@@ -4,5 +4,6 @@ dotenv.config();
 export const { 
     PORT_NO,
     DB_CONNECT,
-    PASS_SEC
+    PASS_SEC,
+    JWT_SECRET
 } = process.env;
