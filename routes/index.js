@@ -6,7 +6,7 @@ import {
 } from '../controller';
 
 
-routes.get("/", registerController.register);
+routes.post("/register", registerController.register);
 
 
 export default routes;

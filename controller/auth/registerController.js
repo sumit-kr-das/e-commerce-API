@@ -1,6 +1,6 @@
 const registerController = {
     async register(req,res){
-        res.json({ msg: "Hello from sumit"})
+        console.log(req.body);
     }
 }
 
