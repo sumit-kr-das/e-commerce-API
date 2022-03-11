@@ -26,5 +26,16 @@ const verifyTokenAndAuthorization = (req,res,next) => {
     })
 }
 
-export { verifyToken, verifyTokenAndAuthorization };
+/* for order and product only admin can add product */
+const verifyTokenAndAdmin = (req,res,next) => {
+    verifyToken(req,res, () => {
+        if(req.user.isAdmin){
+            next();
+        }else{
+            return res.status(403).json("only admin can access !");
+        }
+    })
+}
+
+export { verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin };
 

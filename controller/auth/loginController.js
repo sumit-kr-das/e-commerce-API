@@ -17,7 +17,7 @@ const loginController = {
 
             const accessToken = jwt.sign({
                 id: isExist._id,
-                idAdmin: isExist.isAdmin,
+                isAdmin: isExist.isAdmin,
             },JWT_SECRET, { expiresIn: "3d" });
 
             const { password, ...others} = isExist._doc;
@@ -25,7 +25,7 @@ const loginController = {
             res.status(200).json({ ...others, accessToken });
 
         }catch(err){
-            res.status(401).json({ err: "user login error" });
+            res.status(401).json({ "err": "user login error" });
         }
     }
 }
