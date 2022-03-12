@@ -4,11 +4,11 @@ const routes = express.Router();
 import { 
     registerController, 
     loginController, 
-    userController 
+    userController,
+    productsController 
 } from "../controller";
 
-import { 
-    verifyToken, 
+import {
     verifyTokenAndAdmin, 
     verifyTokenAndAuthorization 
 } from '../middlewares/verifyToken';
@@ -20,5 +20,10 @@ routes.delete("/users/:id", verifyTokenAndAuthorization, userController.deleteUs
 routes.get("/users/find/:id", verifyTokenAndAdmin, userController.getUser);
 routes.get("/users", verifyTokenAndAdmin, userController.getAllUser);
 routes.get("/stats", verifyTokenAndAdmin, userController.usersStats);
+
+routes.post("/products", verifyTokenAndAdmin, productsController.setProducts);
+routes.put("/products/:id", verifyTokenAndAdmin, productsController.updateProducts);
+routes.delete("/products/:id", verifyTokenAndAdmin, productsController.deleteProducts);
+routes.get("/products", productsController.getAllProducts);
 
 export default routes;
